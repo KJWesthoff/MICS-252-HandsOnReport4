@@ -86,29 +86,29 @@ MICS Course 252 Fall 2024 (Kristy Westphal)
 
 I used parts of the ``Six Step Analysis'' we discussed in class, which I have personalized a follows\footnote{Where each is applied, it is denoted as 'No'*} (when has overkill ever stopped us, the assignment instruction said ``just look at the logs and explain''):
 \begin{enumerate}
-  \item *Build knowledge, ask around for help, invite peoples inputs and opinions
-  	\begin{itemize} 
-		\item Gather Facts
-		\item mobilize help, informally and formally
-	\end{itemize} 
-  \item *Systematize facts, and communicate
-   	\begin{itemize} 
-		\item This is where post-it sessions go
-		\item categorize validity inputs based on facts, including what you don't know
-   	\end{itemize}  
-  \item *Determine biases
-   	\begin{itemize}
-		\item Including your own! 
-  	\end{itemize}   
-  \item *Translate Jargon (reference to Richard Feynman\footnote{Richard Feynman was an american theoretical physicist often cited for: “If you can't explain something in simple terms, you don't understand it."\cite{FeynmanMedium} \cite{FeynmanWikipedia}})
-  \item *Ensure that test platform works 
-   	\begin{itemize}
-  		\item Calibrate models and remove biases\footnote{Here goes another Feynman Quote: "You must not fool yourself — and you are the easiest person to fool."\cite{FeynmanFoolOurselves}}
-    \end{itemize}
-  \item *Assure you get the most direct answer
-  	\begin{itemize}
-  		\item Simplify your reasoning/models as much as possible in your reporting
-  	\end{itemize}
+	\item *Build knowledge, ask around for help, invite peoples inputs and opinions
+	      \begin{itemize}
+		      \item Gather Facts
+		      \item mobilize help, informally and formally
+	      \end{itemize}
+	\item *Systematize facts, and communicate
+	      \begin{itemize}
+		      \item This is where post-it sessions go
+		      \item categorize validity inputs based on facts, including what you don't know
+	      \end{itemize}
+	\item *Determine biases
+	      \begin{itemize}
+		      \item Including your own!
+	      \end{itemize}
+	\item *Translate Jargon (reference to Richard Feynman\footnote{Richard Feynman was an american theoretical physicist often cited for: “If you can't explain something in simple terms, you don't understand it."\cite{FeynmanMedium} \cite{FeynmanWikipedia}})
+	\item *Ensure that test platform works
+	      \begin{itemize}
+		      \item Calibrate models and remove biases\footnote{Here goes another Feynman Quote: "You must not fool yourself — and you are the easiest person to fool."\cite{FeynmanFoolOurselves}}
+	      \end{itemize}
+	\item *Assure you get the most direct answer
+	      \begin{itemize}
+		      \item Simplify your reasoning/models as much as possible in your reporting
+	      \end{itemize}
 \end{enumerate}
 
 
@@ -136,17 +136,17 @@ ASCII text, with CRLF line terminators, 68 lines, each is a log entry (example i
 \subsubsection{Log columns/data:} The log entries/data columns are: \\
 \texttt{'Month' 'day' 'HH:MM:SS' 'knight' 'sshd[nnnnn]': 'message string'}
 \begin{itemize}
-  \item The dates are all August 1st, time 18:27:45 to 18:36:28
-  \item The \texttt{knight} sting is present in all log entries
-  \item The \texttt{sshd{[}number{]}} is related to an OpenSSH server process with the number being the process number on an OpenSSH server 
-  \item The \texttt{message} string varies, sometimes containing a username and and ip address/port number.
-  \begin{itemize}
-	\item The message string can be further subdivided into:\texttt{'Action', 'IP', 'Port'}
-	\item The only IP address occurring is \texttt{"218.49.183.17"}
-	\item \texttt{"Failed Password"} string occurs in 36 entries
-	\item The failed password attempts occur with varying usernames: \texttt{'test', 'guest', 'admin', 'root'} on varying ephemeral port numbers (ranging 39604 to 54423)
-	\item \texttt{"error: Could not get shadow information for NOUSER"} occurs in 16 entries
-  \end{itemize}
+	\item The dates are all August 1st, time 18:27:45 to 18:36:28
+	\item The \texttt{knight} sting is present in all log entries
+	\item The \texttt{sshd{[}number{]}} is related to an OpenSSH server process with the number being the process number on an OpenSSH server
+	\item The \texttt{message} string varies, sometimes containing a username and and ip address/port number.
+	      \begin{itemize}
+		      \item The message string can be further subdivided into:\texttt{'Action', 'IP', 'Port'}
+		      \item The only IP address occurring is \texttt{"218.49.183.17"}
+		      \item \texttt{"Failed Password"} string occurs in 36 entries
+		      \item The failed password attempts occur with varying usernames: \texttt{'test', 'guest', 'admin', 'root'} on varying ephemeral port numbers (ranging 39604 to 54423)
+		      \item \texttt{"error: Could not get shadow information for NOUSER"} occurs in 16 entries
+	      \end{itemize}
 \end{itemize}
 
 \subsection{log file 2.txt}\label{log-file-2.txt}
@@ -160,17 +160,17 @@ ASCII text, with CRLF line terminators 26 lines, each is a log entry, see snippe
 \subsubsection{Log columns/data:} The log entries/data columns are: \\
 \texttt{Month day H:MM:SS opala proftpd[nnnnn] opala.xxxxxx.edu.br\ (sieapp.ufpel.edu.br[200.17.161.73]):\ message\ string}
 \begin{itemize}
-  \item The dates are all July 14th, time 04:44:46 to 04:44:47
-  \item The \texttt{opala} sting is present in all log entries.
-  \item The \texttt{proftpd[number]} indicates a process on a FTP server from the open source ProFTP server 
-  \item The \texttt{opala.xxxxxx.edu.br\ (sieapp.ufpel.edu.br[200.17.161.73])} is the same for all entries, noting the .edu.br and consistent ip address{[}200.17.161.73{]}
-  \item The \texttt{message} string varies, sometimes containing a username and and ip address/port number.
-  \begin{itemize}
-	\item FTP sessions are opened and closed, 
-	\item The username \texttt{'guest'} is attempted repeatedly for login
-	\item The logging time interval is 1s, multiple attempts are done within this short time
-	\item mod delay 0.5: delaying for XXX usecs occurs 8 times 
-  \end{itemize}
+	\item The dates are all July 14th, time 04:44:46 to 04:44:47
+	\item The \texttt{opala} sting is present in all log entries.
+	\item The \texttt{proftpd[number]} indicates a process on a FTP server from the open source ProFTP server
+	\item The \texttt{opala.xxxxxx.edu.br\ (sieapp.ufpel.edu.br[200.17.161.73])} is the same for all entries, noting the .edu.br and consistent ip address{[}200.17.161.73{]}
+	\item The \texttt{message} string varies, sometimes containing a username and and ip address/port number.
+	      \begin{itemize}
+		      \item FTP sessions are opened and closed,
+		      \item The username \texttt{'guest'} is attempted repeatedly for login
+		      \item The logging time interval is 1s, multiple attempts are done within this short time
+		      \item mod delay 0.5: delaying for XXX usecs occurs 8 times
+	      \end{itemize}
 \end{itemize}
 
 
@@ -186,27 +186,27 @@ Logs entries (example in Figure \ref{fig:messages} below): \\
 \subsubsection{Log columns/data:} The log entries/data columns are: \\
 \texttt{\textquotesingle{}Month\textquotesingle{}\ \textquotesingle{}day\textquotesingle{}\ \textquotesingle{}HH:MM:SS\textquotesingle{}\ \textquotesingle{}brjdev\textquotesingle{}\ \textquotesingle{}varying\ string\textquotesingle{}:\ \textquotesingle{}message\ string\textquotesingle{}}
 \begin{itemize}
-   \item The dates are all Sep.8th, time 13:43:03 to 17:20:00
-   \item The \texttt{brjdev} string is present in all log entries. 
-   \item The \texttt{message} string varies, sometimes containing a username and and ip address/port number.
-   \begin{itemize}
-	  \item there are log entries from various sources:
-	  \begin{itemize}
-	      \item syslogd, process doing logging in endpoints (Windows, Mac, Linux)\cite{syslog} in the first log entries this process is restarted 3 times (see Figure\ref{fig:messages})
-		  \item anachron, performs periodic command scheduling of processes \cite{anacron}
-		  \item CHRON[NNNN], presumably something with chron jobs in Linux/Unix
-		  \item pam\_rhosts\_auth, module provides rhost authentication services\cite{pamRhostsAuth}   
-		  \item etc.
-	  \end{itemize}
-	  \item There are a majority of very long log entries, starting with: \texttt{Sep  8 HH:MM:SS brjdev SERVER[NNNN]: Dispatch\_input: bad request line} and then some non ASCII characters and numbers
-   \end{itemize}
+	\item The dates are all Sep.8th, time 13:43:03 to 17:20:00
+	\item The \texttt{brjdev} string is present in all log entries.
+	\item The \texttt{message} string varies, sometimes containing a username and and ip address/port number.
+	      \begin{itemize}
+		      \item there are log entries from various sources:
+		            \begin{itemize}
+			            \item syslogd, process doing logging in endpoints (Windows, Mac, Linux)\cite{syslog} in the first log entries this process is restarted 3 times (see Figure\ref{fig:messages})
+			            \item anachron, performs periodic command scheduling of processes \cite{anacron}
+			            \item CHRON[NNNN], presumably something with chron jobs in Linux/Unix
+			            \item pam\_rhosts\_auth, module provides rhost authentication services\cite{pamRhostsAuth}
+			            \item etc.
+		            \end{itemize}
+		      \item There are a majority of very long log entries, starting with: \texttt{Sep  8 HH:MM:SS brjdev SERVER[NNNN]: Dispatch\_input: bad request line} and then some non ASCII characters and numbers
+	      \end{itemize}
 \end{itemize}
 1
 
 \section{Biases (3*,5*)}
 This is a solo assignment so the biases are my own, I have identified the following, which I will need to consider in my analyses:
 \begin{itemize}
-	\item I suspect there is a some spectacular breach to be identified from these logs, and i want to find it 
+	\item I suspect there is a some spectacular breach to be identified from these logs, and i want to find it
 	\item This is a course assignment, I think there is a lesson to be learned somewhere
 \end{itemize}
 
@@ -217,11 +217,11 @@ I have concluded that the files are not related, the logs are from different dat
 
 \subsection{log file 1}
 \begin{itemize}
-  \item OpenSSH is attacked  
-  \item Log entries over 8 minutes and 43 seconds, with 68 log entries
-  \item Log-in attempts with failed passwords and attempts to retrieve 'shadow information'
-  \item different, but generic user names attempted, hereunder 'root' and 'admin'
-  \item Attempts from only one ip addess: 218.49.183.17, but from varying remote/ephemeral ports
+	\item OpenSSH is attacked
+	\item Log entries over 8 minutes and 43 seconds, with 68 log entries
+	\item Log-in attempts with failed passwords and attempts to retrieve 'shadow information'
+	\item different, but generic user names attempted, hereunder 'root' and 'admin'
+	\item Attempts from only one ip addess: 218.49.183.17, but from varying remote/ephemeral ports
 \end{itemize}
 
 \subsubsection{Hypothesis}
@@ -230,25 +230,25 @@ I think this is a brute force attack on an OpenSSH server, SSH gives direct term
 
 \subsection{log file 2}
 \begin{itemize}
-	\item Many login attempts in short time from IP 200.17.161.73 to FTP server: 192.168.2.5 on port 21, TCP port 21 is the 'control' channel used to negotiate access etc. 
+	\item Many login attempts in short time from IP 200.17.161.73 to FTP server: 192.168.2.5 on port 21, TCP port 21 is the 'control' channel used to negotiate access etc.
 	\item The username ued is 'guest' which sounds generic
 	\item FTP sessions are opened and closed many times over 1 second
 	\item The server attempts to slow down communication using 'mod\_delay'
 \end{itemize}
 
 \subsubsection{Hypothesis}
-The log-in attempts occur over a short period indicating that it was done automatically, the use of a generic username suggests it may be part of a brute force attack. However, as the log snippet is short, it may also be a part of a DDoS attack and the server does go into mod\_delay 'slowdown mode', what speaks against this is that the attack only comes from one IP. Given the size of the log snippet both brute-force and DDoS are feasible explanations. 
+The log-in attempts occur over a short period indicating that it was done automatically, the use of a generic username suggests it may be part of a brute force attack. However, as the log snippet is short, it may also be a part of a DDoS attack and the server does go into mod\_delay 'slowdown mode', what speaks against this is that the attack only comes from one IP. Given the size of the log snippet both brute-force and DDoS are feasible explanations.
 
 \subsection{messages}
 \begin{itemize}
-	\item Log entries are from different sources, relating both to internal errors (syslogd is restarted) 
+	\item Log entries are from different sources, relating both to internal errors (syslogd is restarted)
 	\item The long SERVER[NNNN] entries, with 'bad request line' could be a log of malformed http requests to a server
 \end{itemize}
 
 
 The messages log seems to be from a SIEM system collecting logs from various places.
-The long malformed 'SERVER' messages could indicate and attack on a web server, possibly DDoS or something more fancy on another protocol. I would need some more information (IP addresses, protocols ports etc.) to come up with any conclusions, these can probably be retrieved somehow as the 'messages' file is a log aggregation. \\ 
-To better understand the messages, they should be analyzed and sorted by type time etc. I threw the messages (disregarding the long 'SERVER' entries) into ChatGPT, see Appendix \ref{app:ChatGPTMessagesAnslysis} Figure \ref{fig:GPT1.png} and Figure \ref{fig:GPT2.png}. Of security interest, the chat GPT 'analysis' revealed: 
+The long malformed 'SERVER' messages could indicate and attack on a web server, possibly DDoS or something more fancy on another protocol. I would need some more information (IP addresses, protocols ports etc.) to come up with any conclusions, these can probably be retrieved somehow as the 'messages' file is a log aggregation. \\
+To better understand the messages, they should be analyzed and sorted by type time etc. I threw the messages (disregarding the long 'SERVER' entries) into ChatGPT, see Appendix \ref{app:ChatGPTMessagesAnslysis} Figure \ref{fig:GPT1.png} and Figure \ref{fig:GPT2.png}. Of security interest, the chat GPT 'analysis' revealed:
 
 \subsubsection{ChatGPT: Authentication Failures} 13:49:10 to 13:49:12: (see Figure \ref{fig:1349}) There are repeated login attempts for matt from a source labeled corp. Authentication fails,  including attempts with a blank username. This could indicate a brute-force or automated script trying to log in to the system, as multiple failed login attempts are recorded in a very short span. \\
 
@@ -272,10 +272,11 @@ Looking at the 'raw' logs, I am not so sure about this, it is 'only' 3 attempts 
 \end{figure}
 
 \subsubsection{Hypothesis}
-There are 5 attempts over 2 minutes, this could be someone poking around with rsh, or an administrator forgetting a password, would need to check up on who 94.90.84.93 is.  
+There are 5 attempts over 2 minutes, this could be someone poking around with rsh, or an administrator forgetting a password, would need to check up on who 94.90.84.93 is.
 
 This log analysis has identified items for further investigation.
 
+In "retrospect" (after being revealed in class) the "messages" log file is obviously a buffer overflow/heap groomin attack on a webserver with all the long log messages in the logfile. The attacker also manages to log into the system.
 
 %----------------------------------------------------------------------------------------
 %	 REFERENCES
@@ -297,17 +298,17 @@ This log analysis has identified items for further investigation.
 \clearpage
 \chapter{Appendices}
 \begin{appendices}
-\section{ChatGPT analysis of the messages file}\label{app:ChatGPTMessagesAnslysis}	
-\begin{figure}[!htp] % Single column figure
-	\centering
-	\includegraphics[width=0.7\linewidth]{GPT1.png}
-	\caption{ChatGPT analysis of logs before the large chunk of 'SERVER' logs}	\label{fig:GPT1.png}
-\end{figure}
-\begin{figure}[!htp] % Single column figure
-	\centering
-	\includegraphics[width=0.7\linewidth]{GPT2.png}
-	\caption{ChatGPT analysis of logs after the large chunk of 'SERVER' logs}	\label{fig:GPT2.png}
-\end{figure}
+	\section{ChatGPT analysis of the messages file}\label{app:ChatGPTMessagesAnslysis}
+	\begin{figure}[!htp] % Single column figure
+		\centering
+		\includegraphics[width=0.7\linewidth]{GPT1.png}
+		\caption{ChatGPT analysis of logs before the large chunk of 'SERVER' logs}	\label{fig:GPT1.png}
+	\end{figure}
+	\begin{figure}[!htp] % Single column figure
+		\centering
+		\includegraphics[width=0.7\linewidth]{GPT2.png}
+		\caption{ChatGPT analysis of logs after the large chunk of 'SERVER' logs}	\label{fig:GPT2.png}
+	\end{figure}
 
 
 
